@@ -103,5 +103,5 @@ func main() {
 		}
 	}
 
-	defer client.Disconnect(context.Background())
+	return
 }

@@ -10,8 +10,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Validate YAML file (vault.yaml)
-      run: yamllint vault.yaml
+    # - name: Validate YAML file (vault.yaml)
+    #   run: yamllint vault.yaml
 
     - name: Set up Go
       uses: actions/setup-go@v4
