@@ -6,7 +6,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -22,19 +21,19 @@ type UsersData struct {
 	Users []User `yaml:"users"`
 }
 
-func goDotEnvVariable(key string) string {
-	err := godotenv.Load()
+// func goDotEnvVariable(key string) string {
+// 	err := godotenv.Load()
 
-	if err != nil {
-		log.Fatalf("Error loading .env file")
-	}
+// 	if err != nil {
+// 		log.Fatalf("Error loading .env file")
+// 	}
 
-	return os.Getenv(key)
-}
+// 	return os.Getenv(key)
+// }
 
 func main() {
-	mongoUser := goDotEnvVariable("MONGO_USER")
-	mongoPassword := goDotEnvVariable("MONGO_PASSWORD")
+	mongoUser := os.Getenv("MONGO_USER")
+	mongoPassword := os.Getenv("MONGO_PASSWORD")
 
 	connectionString := fmt.Sprintf("mongodb+srv://%s:%s@cluster0.9gtht.mongodb.net/?retryWrites=true&w=majority", mongoUser, mongoPassword)
 	serverAPI := options.ServerAPI(options.ServerAPIVersion1)
