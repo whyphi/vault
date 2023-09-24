@@ -1,16 +1,31 @@
 # vault
 Whyphi's Access Management System
 
-## Instructions
-To give/remove access to Whyphi, edit `vault.yaml` by adding `name` and `email` parameter of the user. 
+## Instructions for Managing Access
+To grant or revoke access to the Whyphi Access Management System, follow these steps:
 
-- Ensure that the user that is beind added is using their BU email as the client will not allow other email domains to be authorized
-- Make a pull request with changes to `vault.yaml`
-- Get the PR reviewed by another person, ensuring that `vault.yaml` is formatted correctly
-- Merge the PR to `main`, in which it will trigger the `main.go` and synchronize `vault.yaml` with our MongoDB `Users` database
+1. Open the `vault.yaml` file.
 
-## Why was Vault build?
-- Managing users for whyphi is very tough. We could create a server with APIs to add or delete users, but in essence, overengineering could happen and there would be more projects to maintain
-- As majority of whyphi's codebase is in GitHub, having a "database" on GitHub in which it could be modified easily seems like an appropriate solution
-- A YAML file is easy to read and edit, making it really easy for newcomers to add their information to `vault.yaml` very easily
-- and... to learn a new language (Go) and work with new technologies!
+2. Add the name and email parameters of the user you want to grant access to.
+
+3. Please ensure that the user you are adding is using their BU (Boston University) email address, as the system only authorizes BU email domains.
+Create a pull request (PR) with your changes to the vault.yaml file.
+
+4. Have another team member review your PR to ensure that the `vault.yaml` file is correctly formatted and the correct users are being added.
+
+5. Once the PR has been reviewed and approved, merge it into the main branch.
+
+6. Merging the PR into main will trigger the `main.go` script, which will synchronize the data from `vault.yaml` with our MongoDB Users database.
+
+## Why Was Vault Built?
+Vault was created to simplify access management for Whyphi while avoiding unnecessary complexity:
+
+- Simplified User Management: Managing user access for Whyphi can be a challenging task. While we could have developed a server with APIs to add or delete users, this approach may have introduced overengineering and added more projects to maintain.
+
+- Integration with GitHub: Since the majority of Whyphi's codebase resides on GitHub, having a "database" in the form of vault.yaml on GitHub provides a convenient and easily modifiable solution.
+
+- User-Friendly YAML Format: The choice of YAML format for vault.yaml makes it easy for newcomers to understand and edit. This simplicity encourages team members to add their information to vault.yaml with ease.
+
+- Learning Opportunity: Vault also serves as an opportunity for team members to learn a new programming language, Go, and work with new technologies, contributing to personal and professional growth.
+
+By following the provided instructions, you can efficiently manage access to Whyphi's Access Management System and help maintain an organized and up-to-date user database.
