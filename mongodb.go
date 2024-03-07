@@ -11,6 +11,7 @@ import (
 // Function to insert a user into MongoDB
 func insertUser(client *mongo.Client, user User) error {
 	collection := client.Database("vault").Collection("users")
+	user.IsNewUser = true
 	_, err := collection.InsertOne(context.Background(), user)
 	if err != nil {
 		log.Printf("Error inserting user: %v", err)

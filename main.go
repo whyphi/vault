@@ -13,8 +13,9 @@ import (
 )
 
 type User struct {
-	Name  string `yaml:"name"`
-	Email string `yaml:"email"`
+	Name      string `yaml:"name"`
+	Email     string `yaml:"email"`
+	IsNewUser bool   `json:"isNewUser" bson:"isNewUser"`
 }
 
 type UsersData struct {
